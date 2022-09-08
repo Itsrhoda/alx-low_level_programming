@@ -1,11 +1,13 @@
 #include <stdio.h>
-
+ 
 /**
- * main - Entry point
+ * main - print the string in the put function
  *
- * Return: Always 0 (Success)
+ * Description: using the main function
+ * this propgram prints "Programming is like building a multilingual puzzle
+ * Return: 0
  */
-int main (void)
+int main(void)
 {
 	puts("\"Programming is like building a multilingual puzzle");
 	return (0);

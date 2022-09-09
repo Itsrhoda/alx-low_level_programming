@@ -18,14 +18,14 @@ int main(void)
 		{
 			for (c = b + 1; c <= '9'; c++)
 			{
-				if ((b != a) != c)
-					putchar(a);
-					putchar(b);
-					putchar(c);
-					if (a == '7' && p == '8')
-						continue;
-					putchar(',');
-					putchar(' ');
+				putchar(a);
+				putchar(b);
+				putchar(c);
+				if (a == '7' && b == '8')
+					continue;
+
+				putchar(',');
+				putchar(' ');
 			}
 		}
 	}

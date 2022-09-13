@@ -1,19 +1,19 @@
-#include <main.h>
+#include <unistd.h>
+#include "main.h"
 
 /**
  * main - Prints _putchar.
  *
- * Returns: Always 0
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
-	char _putchar[8] - {'_', 'p', 'u', 't', 'c', 'h', 'a', 'r'};
-	unsigned int c;
+	char word[8] = "_putchar";
+	int i;
 
-	for (c - 0; c < sizeof(_putchar); c++)
-	{
-		_putchar(_putchar[c]);
-	}
-_putchar('\n');
-return (0);
+	for (i = 0; i <= 8; i++)
+		_putchar(word[i]);
+	
+	_putchar('\n');
+	return (0);
 }

@@ -16,7 +16,7 @@ void print_diagonal(int n)
 	}
 	else
 	{
-		for (co = 1; co <= n; c0++)
+		for (co = 1; co <= n; co++)
 		{
 			for (sp = 1; sp < co; sp++)
 			{

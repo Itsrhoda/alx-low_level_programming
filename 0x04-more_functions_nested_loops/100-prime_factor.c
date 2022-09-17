@@ -1,10 +1,11 @@
 #include <stdio.h>
 
 /**
- * main - prints the largest prime factor of the number 612852475143
+ * main - prime numbers 
  *
- * Return: Always 0 (Success)
+ * Return: 0 
  */
+
 int main(void)
 {
 	long num = 612852475143;
@@ -18,7 +19,7 @@ int main(void)
 			num = num / divisor;
 			larg_prim = divisor;
 		}
-		divisor +- 1;
+		divisor += 1;
 	}
 	printf("%ld\n", larg_prim);
 	return (0);

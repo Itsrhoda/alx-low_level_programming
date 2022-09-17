@@ -19,7 +19,7 @@ int main(void)
 			num = num / divisor;
 			larg_prim = divisor;
 		}
-		dividor += 1;
+		divisor += 1;
 	}
 	printf("%ld\n", larg_prim);
 	return (0);

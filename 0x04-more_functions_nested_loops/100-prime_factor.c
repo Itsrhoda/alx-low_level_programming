@@ -1,9 +1,9 @@
 #include <stdio.h>
 
 /**
- * main - prime numbers 
+ * main - prime numbers
  *
- * Return: 0 
+ * Return: 0
  */
 
 int main(void)
@@ -19,7 +19,7 @@ int main(void)
 			num = num / divisor;
 			larg_prim = divisor;
 		}
-		divisor += 1;
+		dividor += 1;
 	}
 	printf("%ld\n", larg_prim);
 	return (0);

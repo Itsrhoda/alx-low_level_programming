@@ -2,8 +2,8 @@
 #include <stdio.h>
 
 /**
- * cap_string - ...
- * @s: ...
+ * cap_string - a function that capitalizes all words of a string
+ * @s: input string
  *
  * Return: char value
  */

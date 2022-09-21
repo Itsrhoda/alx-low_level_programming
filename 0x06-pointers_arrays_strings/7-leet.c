@@ -3,13 +3,12 @@
 /**
  * leet - Encodes a string into 1337
  * @s: The string to encode
- * @l: Input to be replaced
  *
  * Return: The encoded string
  */
 char *leet(char *s)
 {
-	int a = 0, b = 0, l = 5;
+	int a = 0, b = 0;
 	char r[5] = {'A', 'E', '0', 'T', 'L'};
 	char n[5] = {'4', '3', '0', '7', '1'};
 

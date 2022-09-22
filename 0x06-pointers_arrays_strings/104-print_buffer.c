@@ -40,7 +40,7 @@ void print_line(char *c, int s, int l)
  */
 void print_buffer(char *b, int size)
 {
-	int i;	
+int i;	
 
 	for (i = 0; i <= (size - 1) / 10 && size; i++)
 	{
@@ -56,5 +56,5 @@ void print_buffer(char *b, int size)
 		putchar('\n');
 	}
 	if (size == 0)
-		putchar('\n');
+	putchar('\n');
 }

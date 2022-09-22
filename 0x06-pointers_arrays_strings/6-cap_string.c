@@ -4,7 +4,7 @@
 /**
  * cap_string - a function that capitalizes all words of a string
  * @n: input string
- * @sep: separators
+ * 
  * Return: caps on first letter of a separator
  */
 char *cap_string(char *n)

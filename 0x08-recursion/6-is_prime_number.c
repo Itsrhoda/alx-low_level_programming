@@ -28,10 +28,8 @@ int evaluate_num(int num, int iterator)
  */
 int is_prime_number(int num)
 {
-	int iterator;
-	
+	int iterator;	
 	iterator = 2;
-	
 	/* only greater than 2*/
 	if (num < 2)
 	{

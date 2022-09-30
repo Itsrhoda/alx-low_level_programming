@@ -1,8 +1,8 @@
 #include <stdio.h>
-#include "main.h"
+
 /**
  * main - print the name of the program
- * @agrc: Count arguments
+ * @argc: Count arguments
  * @argv: Arguments
  * Return: Always 0 (Success)
  */

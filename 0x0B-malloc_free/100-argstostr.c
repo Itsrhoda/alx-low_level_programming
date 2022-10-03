@@ -4,8 +4,8 @@
 
 /**
  * argstostr - prints args
- * @c: takes in width of grid
- * @v: height of grid
+ * @ac: takes in width of grid
+ * @av: height of grid
  * Return: the args one line at a time
  */
 char *argstostr(int ac, char **av)

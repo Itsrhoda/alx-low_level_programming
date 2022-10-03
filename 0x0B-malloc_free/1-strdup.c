@@ -1,7 +1,8 @@
 #include "main.h"
 #include <stdlib.h>
 
-/**_strdup - copy a string to a newly allocated space in memory
+/**
+ * _strdup - copy a string to a newly allocated space in memory
  * @str: string to copy
  *
  * Return: pointer to duplicated string or NULL if error

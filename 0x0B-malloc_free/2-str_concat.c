@@ -30,7 +30,7 @@ int _strlen(char *s)
 char *str_concat(char *s1, char *s2)
 {
 	char *dst;
-	unsigned int i, j, size;
+	unsigned int i, j;
 
 	/*If the array is empty*/
 	if (s1 == NULL)
@@ -41,6 +41,9 @@ char *str_concat(char *s1, char *s2)
 
 	/*count size total*/
 	size = (_strlen(s1) + _strlen(s2) + 1);
+
+	/*malloc*/
+	dst = (char *) malloc(size * sizeof(char));
 
 	if (dst == 0)
 	{

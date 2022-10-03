@@ -30,7 +30,7 @@ int _strlen(char *s)
 char *str_concat(char *s1, char *s2)
 {
 	char *dst;
-	unsigned int i, j;
+	unsigned int i, j, k;
 
 	/*If the array is empty*/
 	if (s1 == NULL)
@@ -40,7 +40,7 @@ char *str_concat(char *s1, char *s2)
 		s2 = "";
 
 	/*count size total*/
-	size_t = (_strlen(s1) + _strlen(s2) + 1);
+	k = (_strlen(s1) + _strlen(s2) + 1);
 
 	/*malloc*/
 	dst = (char *) malloc(size * sizeof(char));

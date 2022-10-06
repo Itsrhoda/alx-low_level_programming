@@ -34,7 +34,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	if (new_size > old_size)
 		max = old_size;
 	for (i = 0; i < max; i++)
-		p[i] = old[i];
+		p[i] = oldp[i];
 	free(ptr);
 	return (p);
 }

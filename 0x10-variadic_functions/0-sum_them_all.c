@@ -7,7 +7,7 @@
  * @...: A variable number of paramters to calculate the sum of.
  *
  * Return: If n == 0 - 0.
- * Otherwise - the sum of all parameters.
+ * Otherwise - the sum of all paramters.
  */
 int sum_them_all(const unsigned int n, ...)
 {
@@ -20,5 +20,6 @@ int sum_them_all(const unsigned int n, ...)
 		sum += va_arg(nums, int);
 
 	va_end(nums);
+
 	return (sum);
 }

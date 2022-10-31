@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * binary_to_uint - converts a binary number to an 
+ * binary_to_uint - converts a binary number to an
  * unsigned int.
  * @b: binary.
  *
@@ -27,7 +27,7 @@ unsigned int binary_to_uint(const char *b)
 		}
 		if (b[len] & 1)
 		{
-			ui += base_to;
+			ui += base_two;
 		}
 	}
 

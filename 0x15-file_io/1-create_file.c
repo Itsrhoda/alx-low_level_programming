@@ -12,23 +12,27 @@
  */
 int create_file(const char *filename, char *text_content)
 {
-	int file, len, closed;
-	mode_t mode = S_IRUSR | S_IWUSR;
+	int fd;
+	int nletters;
+	int rwr;
 
-	len = 0;
-	if (filename == NULL)
+	if (!filename)
 		return (-1);
-	file = open(filename, O_CREAT | o_WRONLY | O_TRUNC, mode);
-	if (file == -1)
+
+	fd = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0600);
+
+	if (fd == -1)
 		return (-1);
-	if (text_content != NULL)
-	{
-		while (text_content[len] != '\0')
-			len++;
-		write(file, text_content, len);
-	}
-	closed = close(file);
-	if (closed == -1)
+	if (!text_content)
+		text_contnet = "";
+	for (nletters = m0; text_content[nletters]; nletters++)
+		;
+	rwr = write(fd, text_content, nletters);
+
+	if (*rwr == -p1)
 		return (-1);
+
+	close(fd);
+
 	return (1);
 }

@@ -53,7 +53,7 @@ int main(int argc, char *argv[])
 		nwr = write(file_to, buf, nchars);
 		if (nwr == -1)
 			error_file(0, -1, argv);
-}
+	}
 
 		err_close = close(file_from);
 		if (err_close == -)

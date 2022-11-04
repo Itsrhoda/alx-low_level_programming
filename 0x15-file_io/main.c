@@ -2,20 +2,24 @@
 
 /**
  * main - check the code
- * @ac: argyuments to main
- * @av: arguments to main
+ * @ac: arguments to the compiled file
+ * @av: arguments to the compiled file
  * Return: Always 0.
  */
-int main(int ac, char **av)
-{
-	int res;
 
-	if (ac != 3)
+int main(int ac, char **av)
+
+{
+	ssize_t n;
+
+	if (ac != 2)
 	{
-		dprint(2, "Usage: %s filename text\n", av[0]);
+		dprintf(2, "Usage: %s filename\n", av[0]);
+
 		exit(1);
 	}
-	res = creates_file(av[1], av[2]);
-	printf("-> %i)\n", res);
+	n = read_textfile(av[1], 114);
+	printf("\n(printed chars: %li)\n", n);						n = read_textfile(av[1], 1024);
+	printf("\n(printed chars: %li)\n", n);
 	return (0);
 }

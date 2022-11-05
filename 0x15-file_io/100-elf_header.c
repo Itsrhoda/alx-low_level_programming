@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
 	print_data(header->e_ident);
 	print_version(header->e_ident);
 	print_osabi(header->e_ident);
-	printf(" ABI Version: ");
+	printf(" ABI Version:                        ");
 	printf("%i\n", header->e_ident[EI_ABIVERSION]);
 	print_type(header->e_type, header->e_ident);
 	print_entry(header->e_entry, header->e_ident);
@@ -52,7 +52,7 @@ int main(int argc, char *argv[])
  */
 void validate_elf(unsigned char *e_ident)
 {
-	if (e_ident[0] == 0x7f && e_ident[1] = 'E' &&
+	if (e_ident[0] == 0x7f && e_ident[1] == 'E' &&
 			e_ident[2] == 'L' && e_ident[3] == 'F')
 	{
 		printf("ELF Header:\n");
@@ -68,7 +68,7 @@ void print_magic(unsigned char *e_ident)
 {
 	register int i;
 
-	printf("  Magic:  ");
+	printf("  Magic:   ");
 	for (i = 0; i < EI_NIDENT - 1; i++)
 		printf("%02x ", e_ident[i]);
 	printf("%02x\n", e_ident[i]);
@@ -77,9 +77,9 @@ void print_magic(unsigned char *e_ident)
  * print_class - print ELF's class
  * @e_ident: pointer to char array
  */
-void print_lass(unsigned char *e_ident)
+void print_class(unsigned char *e_ident)
 {
-	printf("  Class:  ");
+	printf("  Class:                             ");
 	switch (e_ident[EI_CLASS])
 	{
 		case ELFCLASSNONE:
@@ -88,7 +88,7 @@ void print_lass(unsigned char *e_ident)
 		case ELFCLASS32:
 			printf("ELF32\n");
 			break;
-		class ELFCLASS64:
+		case ELFCLASS64:
 			printf("ELF64\n");
 			break;
 		default:
@@ -101,14 +101,14 @@ void print_lass(unsigned char *e_ident)
  */
 void print_data(unsigned char *e_ident)
 {
-	print("  Data:  ");
+	print("  Data:                               ");
 	switch (e_ident[EI_DATA])
 	{
 		case ELFDATANONE:
 			printf("Unknown data format\n");
 			break;
 		case ELFDATA2LSB:
-			printf("2's complement, litle endian\n");
+			printf("2's complement, little endian\n");
 			break;
 		case ELFDATA2MSB:
 			printf("2's complement, big endian\n");
@@ -123,7 +123,7 @@ void print_data(unsigned char *e_ident)
  */
 void print_version(unsigned char *e_ident)
 {
-	printf("  Version:  ");
+	printf("  Version:                           ");
 	if (e_ident[EI_VERSION] == EV_CURRENT)
 		printf("%i (current)\n", EV_CURRENT);
 	else
@@ -136,7 +136,7 @@ void print_version(unsigned char *e_ident)
  */
 void print_osabi(unsigned char *e_ident)
 {
-	printf("  OS/ABI:  ");
+	printf("  OS/ABI:                            ");
 	switch (e_ident[EI_OSABI])
 	{
 		case ELFOSABI_SYSV:
@@ -146,7 +146,7 @@ void print_osabi(unsigned char *e_ident)
 			printf("UNIX - HP-UX\n");
 			break;
 		case ELFOSABI_NETBSD:
-			printf("UNIX - NetASD\n");
+			printf("UNIX - NetBSD\n");
 			break;
 		case ELFOSABI_LINUX:
 			printf("UNIX - Linux\n");
@@ -161,13 +161,13 @@ void print_osabi(unsigned char *e_ident)
 			printf("UNIX - FreeBSD\n");
 			break;
 		case ELFOSABI_TRU64:
-			printf("UNIX - TRU64\N");
+			printf("UNIX - TRU64\n");
 			break;
 		case ELFOSABI_ARM:
 			printf("ARM\n");
 			break;
 		case ELFOSABI_STANDALONE:
-			printf("Stanalone App\n");
+			printf("Standalone App\n");
 			break;
 
 		default:
@@ -178,14 +178,14 @@ void print_osabi(unsigned char *e_ident)
 /**
  * print_type - print ELF's type
  * @e_type: e_type address
- * @e_ident: pointer to char aray
+ * @e_ident: pointer to char array
  */
 void print_type(unsigned int e_type, unsigned char *e_ident)
 {
 	if (e_ident[EI_DATA] == ELFDATA2MSB)
 		e_type = e_type >> 8;
 
-	printf("  Type:  ");
+	printf("  Type:                              ");
 	switch (e_type)
 	{
 		case ET_NONE:
@@ -216,9 +216,9 @@ void print_type(unsigned int e_type, unsigned char *e_ident)
 void print_entry(unsigned int e_entry, unsigned char *e_ident)
 {
 	if (e_ident[EI_DATA] == ELFDATA2MSB)
-		e_entry = lit_to_big_endiane(e_entry);
+		e_entry = lit_to_big_endian(e_entry);
 
-	printf("  Entry point address:   ");
+	printf("  Entry point address:              ");
 	printf("%#x\n", (unsigned int)e_entry);
 }
 

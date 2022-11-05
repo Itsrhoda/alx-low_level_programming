@@ -12,7 +12,7 @@ void error_file(int file_from, int file_to, char *argv[])
 {
 	if (file_from == -1)
 	{
-		dprint(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
 	if (file_to == -1)
@@ -47,7 +47,7 @@ int main(int argc, char *argv[])
 	nchars = 1024;
 	while (nchars == 1024)
 	{
-		nchars = read(file(file_from, buf, 1024);
+		nchars = read(file_from, buf, 1024);
 		if (nchars == -1)
 			error_file(-1, 0, argv);
 		nwr = write(file_to, buf, nchars);
@@ -56,7 +56,7 @@ int main(int argc, char *argv[])
 	}
 
 		err_close = close(file_from);
-		if (err_close == -)
+		if (err_close == -1)
 		{
 			dprint(STDERR_FILENO, "Error: Can't close fd %d\n", file_from);
 			exit(100);
@@ -70,6 +70,3 @@ int main(int argc, char *argv[])
 		}
 		return (0);
 }
-
-
-

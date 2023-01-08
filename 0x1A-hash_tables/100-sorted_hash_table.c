@@ -1,7 +1,7 @@
 #include "hash_tables.h"
 
 shash_table_t *shash_table_create(unsigned long int size);
-int shash_table_set(shash_table_t *ht, const char *key, cconst char *value);
+int shash_table_set(shash_table_t *ht, const char *key, const char *value);
 char *shash_table_get(const shash_table_t *ht, const char *key);
 void shash_table_print(const shash_table_t *ht);
 void shash_table_print_rev(const shash_table_t *ht);
@@ -96,7 +96,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	}
 	else if (strcmp(ht->shead->key, key) > 0)
 	{
-		new_>sprev = NULL;
+		new->sprev = NULL;
 		new->snext = ht->shead;
 		ht->shead->sprev = new;
 		ht->shead = new;
@@ -104,7 +104,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	else
 	{
 		tmp = ht->shead;
-		while (tmp->snext != NULL && strcmp(tmp->snext-key, key) < 0)
+		while (tmp->snext != NULL && strcmp(tmp->snext->key, key) < 0)
 			tmp = tmp->snext;
 		new->sprev = tmp;
 		new->snext = tmp->snext;

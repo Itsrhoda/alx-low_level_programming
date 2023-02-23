@@ -7,3 +7,4 @@ SRC = main.c holberton.c
 # Rule all: uses variables to build the holberton executable file
 all: $(SRC)
 	$(CC) $(SRC) -o holberton
+

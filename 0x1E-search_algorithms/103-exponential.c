@@ -1,8 +1,8 @@
 #include "search_algos.h"
+
 /**
- * b_search - function that searches for a value in a sorted 
- * array of integers using the Binary search algorithm
- *
+ * _binary_search - Searches for a value in a sorted array
+ * of integers using binary search.
  * @array: Array is a pointer to the first element of the array to search in
  * @low: Left index in the array
  * @high: right index in the array
@@ -70,7 +70,7 @@ int exponential_search(int *array, size_t size, int value)
 		}
 		if (bound + 1 < size)
 			min = bound + 1;
-		else 
+		else
 			min = size;
 		printf("Value found between indexes [%lu] and [%lu]\n", bound / 2, min - 1);
 		result = b_search(array, bound / 2, min, value);

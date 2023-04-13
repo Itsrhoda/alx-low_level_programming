@@ -7,9 +7,9 @@
  * @value: value to search in
  * Return: index of the number
  */
-skiplist_t *linear_skip(skiplist_t *list, int value)
+listint_s *linear_skip(skiplist_t *list, int value)
 {
-	skiplist_t *go;
+	listint_s *go;
 
 	if (list == NULL)
 		return (NULL);
@@ -21,7 +21,7 @@ skiplist_t *linear_skip(skiplist_t *list, int value)
 		go = go->express;
 		printf("Value checked at index ");
 		printf("[%d] = [%d]\n", (int)go->index, go->n);
-	}while (go->express && go->n < value);
+	} while (go->express && go->n < value);
 
 	if (go->express == NULL)
 	{

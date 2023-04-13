@@ -11,7 +11,7 @@
  * Return: The first index where value is located
  * or -1 if value is not found or if array is NULL
  */
-int b_search(int *array, size_t low, size_t high, int value)
+int _binary_search(int *array, size_t low, size_t high, int value)
 {
 	size_t left = low;
 	size_t right = high - 1;

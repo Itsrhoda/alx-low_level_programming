@@ -7,9 +7,9 @@
  * @value: value to search in
  * Return: index of the number
  */
-listint_s *linear_skip(skiplist_t *list, int value)
+skiplist_t *linear_skip(skiplist_t *list, int value)
 {
-	listint_s *go;
+	skiplist_t *go;
 
 	if (list == NULL)
 		return (NULL);
